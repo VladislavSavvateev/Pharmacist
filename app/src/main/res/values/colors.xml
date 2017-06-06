@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3A65FF</color>
+    <color name="colorPrimaryDark">#3A65FF</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="splash1_bgColor">#F44336</color>
+    <color name="splash1_activeDot">#E57373</color>
+    <color name="splash1_inactiveDot">#D32F2F</color>
+
+    <color name="splash2_bgColor">#4CAF50</color>
+    <color name="splash2_activeDot">#81C784</color>
+    <color name="splash2_inactiveDot">#388E3C</color>
+
+    <color name="splash3_bgColor">#3F51B5</color>
+    <color name="splash3_activeDot">#7986CB</color>
+    <color name="splash3_inactiveDot">#303F9F</color>
+
+    <color name="splash4_bgColor">#FF9800</color>
+    <color name="splash4_activeDot">#FFB74D</color>
+    <color name="splash4_inactiveDot">#F57C00</color>
+
+    <array name="inactiveDotArray">
+        <item>@color/splash1_inactiveDot</item>
+        <item>@color/splash2_inactiveDot</item>
+        <item>@color/splash3_inactiveDot</item>
+        <item>@color/splash4_inactiveDot</item>
+    </array>
+
+    <array name="activeDotArray">
+        <item>@color/splash1_activeDot</item>
+        <item>@color/splash2_activeDot</item>
+        <item>@color/splash3_activeDot</item>
+        <item>@color/splash4_activeDot</item>
+    </array>
+
+</resources>

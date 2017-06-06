@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+<item android:title="@string/pharm_find" android:showAsAction="always"
+    android:icon="@drawable/ic_action_gps_fixed"
+    android:id="@+id/pharm_find"/>
+
+</menu>
