@@ -66,6 +66,7 @@ public class NotificationActivity extends AppCompatActivity {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        while (player == null);
         player.stop();
         return super.onTouchEvent(event);
     }

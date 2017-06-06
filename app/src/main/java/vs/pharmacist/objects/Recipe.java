@@ -1,6 +1,7 @@
 package vs.pharmacist.objects;
 
 import android.support.annotation.Nullable;
+import android.util.Log;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -89,11 +90,14 @@ public class Recipe implements Serializable {
             d.setHours(hour);
             d.setMinutes(minute);
             d.setSeconds(0);
-            if (dayInWeek == 0 && dayInMonth == 0)
-                return d.compareTo(new Date(System.currentTimeMillis()));
+
+            Date d1 = new Date(System.currentTimeMillis());
+            if (dayInWeek == 0 && dayInMonth == 0) {
+                return compareTwoDates(d, d1);
+            }
             if (dayInMonth != 0) {
                 d.setDate(dayInMonth);
-                return d.compareTo(new Date(System.currentTimeMillis()));
+                return compareTwoDates(d, d1);
             } else {
                 Calendar c = Calendar.getInstance();
                 c.setTime(d);
@@ -104,8 +108,21 @@ public class Recipe implements Serializable {
                     dayofweek = c.get(Calendar.DAY_OF_WEEK) - 1;
                     if (dayofweek == 0) dayofweek = 7;
                 }
-                return c.getTime().compareTo(new Date(System.currentTimeMillis()));
+                return compareTwoDates(d, d1);
             }
+        }
+
+        int compareTwoDates(Date d1, Date d2) {
+            /*String debug = "";
+            debug += Integer.toString(d1.getMonth()) + "\t" + Integer.toString(d2.getMonth()) + "\n";
+            debug += Integer.toString(d1.getDate()) + "\t" + Integer.toString(d2.getDate()) + "\n";
+            debug += Integer.toString(d1.getHours()) + "\t" + Integer.toString(d2.getHours()) + "\n";
+            debug += Integer.toString(d1.getMinutes()) + "\t" + Integer.toString(d2.getMinutes()) + "\n";
+            Log.d("debug", "compareTwoDates: \n" + debug);*/
+            if ((d1.getMonth() == d2.getMonth()) && (d1.getDate() == d2.getDate()) &&
+                    (d1.getHours() == d2.getHours()) && (d1.getMinutes() == d2.getMinutes()))
+                return 0;
+            else return d1.compareTo(d2);
         }
 
         @Override
